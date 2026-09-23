@@ -23,6 +23,9 @@ export default function Header() {
             {category.label}
           </a>
         ))}
+        <a href="#recorrido" className="hover:text-foreground transition-colors">
+          Recorrido
+        </a>
         <a href="#contacto" className="hover:text-foreground transition-colors">
           Contacto
         </a>
@@ -49,6 +52,13 @@ export default function Header() {
               {category.label}
             </a>
           ))}
+          <a
+            href="#recorrido"
+            onClick={() => setOpen(false)}
+            className="py-2 uppercase tracking-wide text-muted hover:text-foreground"
+          >
+            Recorrido
+          </a>
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
