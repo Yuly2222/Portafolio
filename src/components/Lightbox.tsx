@@ -45,13 +45,16 @@ export default function Lightbox({
     <dialog
       ref={dialogRef}
       onClose={onClose}
-      onClick={(event) => {
-        if (event.target === dialogRef.current) onClose();
-      }}
-      className="m-auto max-h-screen max-w-none bg-transparent p-0 open:flex"
+      className="m-auto max-h-dvh max-w-none bg-transparent p-0 open:flex"
     >
       {photo && (
-        <div className="relative flex h-screen w-screen items-center justify-center p-4 md:p-10">
+        <div
+          // Cualquier toque fuera de la foto y de los botones cierra.
+          onClick={(event) => {
+            if (!(event.target as HTMLElement).closest("img, button")) onClose();
+          }}
+          className="relative flex h-dvh w-screen items-center justify-center p-4 md:p-10"
+        >
           <button
             type="button"
             aria-label="Cerrar"
@@ -84,16 +87,17 @@ export default function Lightbox({
             </>
           )}
 
-          <div className="relative h-full w-full">
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="100vw"
-              className="object-contain"
-              quality={90}
-            />
-          </div>
+          {/* Sin `fill`: la caja del <img> mide lo mismo que la foto visible,
+              así el área vacía alrededor sí cuenta como "fuera". */}
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="h-auto max-h-full w-auto max-w-full object-contain"
+            quality={90}
+          />
         </div>
       )}
     </dialog>
