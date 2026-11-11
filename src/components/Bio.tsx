@@ -5,7 +5,7 @@ import InstagramIcon from "@/components/icons/InstagramIcon";
 export default function Bio() {
   return (
     <section className="grid gap-10 px-6 py-20 md:grid-cols-2 md:px-10 md:py-28">
-      <div>
+      <div className="reveal">
         <p className="text-sm uppercase tracking-[0.3em] text-muted">
           {siteConfig.role}
         </p>
@@ -14,7 +14,7 @@ export default function Bio() {
         </p>
       </div>
 
-      <div id="contacto" className="flex flex-col justify-end gap-6">
+      <div id="contacto" className="reveal flex flex-col justify-end gap-6">
         <p className="max-w-prose text-muted">{siteConfig.availability}</p>
 
         <div className="flex flex-col gap-3 text-sm">

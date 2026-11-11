@@ -45,7 +45,7 @@ export default function Lightbox({
     <dialog
       ref={dialogRef}
       onClose={onClose}
-      className="m-auto max-h-dvh max-w-none bg-transparent p-0 open:flex"
+      className="m-auto max-h-dvh max-w-none bg-transparent p-0 open:flex open:motion-safe:animate-fade-in"
     >
       {photo && (
         <div

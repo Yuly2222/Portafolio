@@ -30,7 +30,7 @@ export default function PhotoGrid({
             key={photo.src}
             type="button"
             onClick={() => setOpenIndex(index)}
-            className="group relative aspect-[4/5] overflow-hidden bg-white/5"
+            className="reveal group relative aspect-[4/5] overflow-hidden bg-white/5"
           >
             <Image
               src={photo.src}

@@ -27,3 +27,48 @@ body {
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.92);
 }
+
+/* --- Movimiento ------------------------------------------------------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes drift {
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@theme {
+  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-drift: drift 22s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  dialog[open]::backdrop {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  /* Aparece al entrar en pantalla. Solo CSS: navegadores sin
+     animation-timeline (p. ej. Firefox) lo muestran sin animar. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
