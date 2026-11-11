@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "Yuly Dayana Rodríguez Salcedo",
   role: "Fotógrafa",
   heroTitle: "Portafolio",
-  heroSubtitle: "Fotográfico",
+  heroSubtitle: "Fotográfico y Artístico",
   bio: "Gestora cultural apasionada por la fotografía y las artes plásticas. Mi dominio de diversas técnicas y mi sensibilidad creativa acompañan una trayectoria fotográfica reciente, construida con disciplina, mirada artística y dedicación.",  availability:
     "Actualmente disponible para colaborar en sesiones, proyectos editoriales y encargos personalizados.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "yuly.rodriguez@corporacioncotambora.onmicrosoft.com",
@@ -137,6 +137,11 @@ export const timeline: TimelineEntry[] = [
   {
     year: 2026,
     title: "II Festival de la Hortaliza — Cotaverso Teatro",
+    description: "Participación como logística y fotógrafa",
+  },
+  {
+    year: 2026,
+    title: "Festival Luna Roja Colegio Jose Joaquin Casas — Cotaverso Teatro",
     description: "Participación como logística y fotógrafa",
   },
 ];
